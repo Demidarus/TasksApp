@@ -1,0 +1,755 @@
+{
+	"info": {
+		"_postman_id": "7be2392f-f8ea-4a17-9424-430ae9e3fafb",
+		"name": "CFM-tasks-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9431076"
+	},
+	"item": [
+		{
+			"name": "Developers",
+			"item": [
+				{
+					"name": "Get All Developers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/developers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"developers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Developer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/developers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"developers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Extern Developer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/developers?isExtern[eq]=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"developers"
+							],
+							"query": [
+								{
+									"key": "isExtern[eq]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Developers with Filters and Tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/developers?isExtern[eq]=1&includeTasks=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"developers"
+							],
+							"query": [
+								{
+									"key": "isExtern[eq]",
+									"value": "1"
+								},
+								{
+									"key": "includeTasks",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Developer With Tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/developers/1?includeTasks=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"developers",
+								"1"
+							],
+							"query": [
+								{
+									"key": "includeTasks",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Developer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "chedi",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Developer",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "shedi.nafti@live.fr",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Darmstadt",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "12345123",
+									"type": "text"
+								},
+								{
+									"key": "isExtern",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "company",
+									"value": "company",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/developers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"developers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Developer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "24|RYWjmeQJ8F7wXQbHu3AWf3pUhNLdEM66A5UfYHmL",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "zabbeba",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isExtern",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/developers/31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"developers",
+								"31"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Developer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/developers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"developers",
+								"1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Get All Tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Task",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/tasks/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Task by Story Points",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/tasks?storyPoints[gt]=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "storyPoints[gt]",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "25|LLfiVioqpjNT8QtvCuqVfF55JYIUZwL9UpJNHRKp",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "developerId",
+									"value": "37",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "this is a very long in detail so that i can test the limit title",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam egestas ultrices quam, at facilisis augue vehicula a. Duis ullamcorper posuere ante, sit amet sodales urna dignissim sed. Donec sapien est, ultrices et lacus a, viverra maximus ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Ut mi risus, dictum imperdiet orci et, pellentesque aliquam eros. Quisque sit amet faucibus lectus, ut congue justo. Fusce feugiat consequat risus hendrerit venenatis. Curabitur non sapien sed leo pretium sollicitudin. Etiam malesuada, leo ut lobortis tempus, ligula eros aliquam lorem, id porta purus felis a sapien. In ullamcorper faucibus ipsum interdum efficitur. Etiam euismod tellus pharetra diam gravida, sit amet malesuada ligula vehicula. Phasellus at ipsum id ex dignissim ultricies at et ante.\n\nMauris et quam eget massa ornare imperdiet sed a justo. Nulla sed ligula neque. Nulla interdum aliquam orci ut maximus. Ut et tellus efficitur, elementum augue id, gravida odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis sem nec lectus auctor mattis vitae ut dolor. Vivamus nisl orci, lobortis in sem nec, tincidunt luctus nibh. Vestibulum vel turpis vitae leo porta consequat vitae at nunc. Donec pellentesque, nisi iaculis euismod pulvinar, odio felis consequat arcu, a ornare dolor est a augue. Nunc vitae consectetur magna, ut iaculis enim. Fusce sem sapien, vehicula ac elementum sollicitudin, sagittis nec lectus. Sed eleifend mauris at dui ultricies, quis tempor libero finibus.\n\nCras in libero quis ex tempor fermentum quis in nisl. Vivamus quis dui suscipit, tincidunt velit ultrices, dignissim lacus. Fusce urna neque, tincidunt sed maximus ut, laoreet molestie sem. Proin vitae lacinia erat, commodo aliquet odio. Aenean a auctor justo, id dignissim massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque risus ut orci malesuada consectetur.\n\nInteger aliquet, leo ac fringilla varius, elit turpis gravida libero, in viverra mauris sapien vel dolor. Nullam lorem turpis, volutpat vel tincidunt vel, condimentum at nisl. Praesent blandit pharetra ante, ac ornare mauris ullamcorper vel. Mauris fermentum dui at leo dapibus, in malesuada odio suscipit. Cras sed ultrices lacus, a dignissim quam. Nullam sed nisl lacinia augue imperdiet dictum. Integer nec lacinia ipsum. Integer sed accumsan lectus. Fusce in tortor a velit viverra tempus vitae et nisi. Maecenas hendrerit risus eu condimentum congue. Sed laoreet venenatis purus, interdum varius enim porttitor sit amet. Cras mattis enim ante, eu semper magna consequat id.\n\nCurabitur quis ante elit. Vestibulum risus mi, eleifend id lectus nec, efficitur faucibus sapien. Sed ut dui sit amet nisi feugiat venenatis. Proin dolor justo, mattis a justo quis, bibendum sodales libero. Donec nec scelerisque tellus, id varius dolor. Nulla non interdum mi. Sed pellentesque purus id elementum iaculis. Duis blandit lorem et magna posuere faucibus.",
+									"type": "text"
+								},
+								{
+									"key": "storyPoints",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "developerId",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "aaaaa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "aaaaaaaaa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "storyPoints",
+									"value": "7",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "In Progress",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/tasks/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|mdlyOm0Oh1hk8SchfOkiDjS6Lujcq41gF9ifgUr6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/tasks/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "21|h9x7Mb3dMMbrkxkN7vnA6UmldZuWzUKyiaimdYMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/tasks/search/sal/31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"search",
+								"sal",
+								"31"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register Developer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Chandoul",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "shedi.nafti@live.loll",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Developer",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "aaaaa",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "isExtern",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "company",
+									"value": "aaaaaaa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Developer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "shedi.nafti@live.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Developer Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|xRSFlJSyuWcOAXvLN7iY0UfwUjXFhf7cCrErCfhY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
