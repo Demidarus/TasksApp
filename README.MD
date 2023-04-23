@@ -84,3 +84,11 @@ The backend API consists of public and protected routes:
 ## Testing API Routes with Postman
 
 A Postman collection is available at the root of the project to test the different API routes. Start by sending the Authentication/register request to get a token, and then use the token to access the other requests.
+
+## Todo
+
+A lot actually:
+
+- Add better and more consistent styling
+- Add Projects
+- View other user's tasks in the frontend
